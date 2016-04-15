@@ -2,6 +2,9 @@ Linear Discriminant Analysis
 
 Can support multiple (>2) classes
 
+Basic LDA achieves 87.24% accuracy with all classes
+classify_digits.m runs the classification.
+
 Learn the model on LDA.m
 Inputs:
 	X -- Input matrix of size n x p
