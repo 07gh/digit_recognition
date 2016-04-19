@@ -1,5 +1,5 @@
 % Tests logistic regression on digits 0 and 1.
-% Individually, this text does poorly, howevever, one vs all algorithm performs much better.
+% Individually, this test does very well
 
 data = csvread('../data/train.csv');
 [n, p] = size(data);
@@ -11,11 +11,11 @@ data = csvread('../data/test.csv');
 y_test = data(:, 1);
 X_test = data(:, 2:p);
 
-lines_to_use = y_train == 0 + y_train == 1;
+lines_to_use = logical((y_train == 0) + (y_train == 1));
 X_train = X_train(lines_to_use, :);
 y_train = y_train(lines_to_use, :);
 
-lines_to_use = y_test == 0 + y_test == 1;
+lines_to_use = logical((y_test == 0) + (y_test == 1));
 X_test = X_test(lines_to_use, :);
 y_test = y_test(lines_to_use, :);
 
@@ -24,8 +24,6 @@ disp('Finished learning...')
 disp('Now testing...')
 classifications = classify_logistic_regression(X_test, beta, classes);
 
-disp('Percentage correct')
-sum(classifications == y_test) / n
+fprintf('Fraction correct: %.4f\n', sum(classifications == y_test) / numel(y_test))
 
-classifications(1:10)
 

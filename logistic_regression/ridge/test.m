@@ -1,8 +1,8 @@
-% Runs fake data on logistic_regression.m
+% Runs fake data on logistic_regression_ridge.m
 
 X = [1,1;1,2;3,2;2,3;-1,-3;-2,-3;2,4;-3,-2;.5,.5];
 y = [1;1;1;1;0;0;0;0;0];
-beta = logistic_regression(X, y)
+beta = logistic_regression_ridge(X, y, 150)
 
 n = size(y);
 
