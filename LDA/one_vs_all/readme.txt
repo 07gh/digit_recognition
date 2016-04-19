@@ -2,7 +2,7 @@ Linear Discriminant Analysis with one vs. all multiclassification
 
 Ran to test one vs. all techniques
 
-One vs. all achieces 87.10% accuracy, less than basic LDA
+One vs. all achieves 87.10% accuracy, less than basic LDA
 classify_digits_one_vs_all.m runs the classification.
 
 Learn the model on LDA_one_vs_all_learn.m

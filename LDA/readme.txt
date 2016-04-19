@@ -36,7 +36,8 @@ Outputs:
 		classifications(i) is the class predicted for observation i in X
 
 calc_LDA_discriminant.m is a helper function for classify_LDA.m
-It calculates the discriminant for the given class for the given observationInputs:
+It calculates the discriminant for the given class for the given observation
+Inputs:
 	x -- Observation to calculate disciminant function for. One row in X from classify_LDA.m
 	means -- Same as LDA.m
 	C_inv -- Same as LDA.m
