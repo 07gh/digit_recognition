@@ -9,4 +9,4 @@ Currently have classification methods for:
 --Logistic Regression (logit), including:  
 ----multi-class (accuracy )  
 ----simple logistic regression (no regularization) (accuracy 85.55%)  
-----ridge penalty regularization for multi-class (accuracy 88.29%)
+----ridge penalty regularization for multi-class (accuracy 89.19%)

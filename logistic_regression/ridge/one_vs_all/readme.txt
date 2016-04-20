@@ -1,6 +1,6 @@
 Logistic Regression with Ridge Penalty with one vs. all multiclassification
 
-One vs. all achieves 88.29% accuracy.
+One vs. all achieves 89.19% accuracy.
 classify_digits_ridge_one_vs_all.m runs the classification. This classification technique runs cross-validation on lambda.
 
 Learn the model on logit_ridge_one_vs_all_learn.m. Automatically adds a column of ones

@@ -1,5 +1,5 @@
 % Tests logistic regression with ridge penalty on all digits.
-% This achieves an accuracy of 88.29%.
+% This achieves an accuracy of 89.19%.
 addpath('../..')
 
 data = csvread('../../../data/train.csv');
