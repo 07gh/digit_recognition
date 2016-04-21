@@ -1,5 +1,5 @@
 % Tests logistic regression with lasso penalty on all digits.
-% This achieves an accuracy of .
+% This achieves an accuracy of 89.74%.
 addpath('../..')
 
 data = csvread('../../../data/train.csv');
@@ -22,10 +22,10 @@ X_train = X_train(int16(n_train/3)+1:n_train, :);
 y_train = y_train(int16(n_train/3)+1:n_train, :);
 
 disp('Learning model...')
-beta_vector = logit_ridge_one_vs_all_learn(X_train, y_train, X_val, y_val);
+beta_vector = logit_lasso_one_vs_all_learn(X_train, y_train, X_val, y_val);
 disp('Finished learning')
 
 disp('Now testing...')
-classifications = logit_ridge_one_vs_all_classify(X_test, beta_vector, unique(y_test));
+classifications = logit_lasso_one_vs_all_classify(X_test, beta_vector, unique(y_test));
 
 fprintf('Fraction correct: %.4f\n', sum(classifications == y_test) / numel(y_test))
