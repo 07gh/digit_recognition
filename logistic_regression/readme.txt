@@ -34,7 +34,7 @@ Outputs:
 calc_odds.m is a helper function for classify_logistic_regression.m
 It calculates the odds for the given class for the given observation
 Inputs:
-	x -- Observation to calculate disciminant function for. One row in X from classify_logistic_regression.m
+	x -- Observation to calculate odds for. One row in X from classify_logistic_regression.m
 	beta -- Same as logistic_regression.m
 
 Outputs:
