@@ -1,5 +1,5 @@
 % Tests SVM on all digits.
-% This achieves an accuracy of .
+% This achieves an accuracy of 89.12% with a fraction of 70%.
 addpath('..')
 
 data = csvread('../../data/train.csv');
@@ -13,13 +13,15 @@ data = csvread('../../data/test.csv');
 y_test = data(:, 1);
 X_test = data(:, 2:p);
 
+fraction = .7;
+
 % Create validation set for cross-validation on C
-X_val = X_train(1:int16(n_train/3), :);
-y_val = y_train(1:int16(n_train/3), :);
+X_val = X_train(1:int16(fraction*n_train), :);
+y_val = y_train(1:int16(fraction*n_train), :);
 n_val = numel(y_val);
 
-X_train = X_train(int16(n_train/3)+1:n_train, :);
-y_train = y_train(int16(n_train/3)+1:n_train, :);
+X_train = X_train(int16(fraction*n_train)+1:n_train, :);
+y_train = y_train(int16(fraction*n_train)+1:n_train, :);
 
 disp('Learning model...')
 weight_vector = SVM_one_vs_all_learn(X_train, y_train, X_val, y_val);
