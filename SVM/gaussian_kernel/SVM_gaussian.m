@@ -10,13 +10,10 @@ function [kernel_weights, X_ones, classes, gamma] = SVM_gaussian(X, y, C)
     y_one_neg_one = zeros(n, 1);
     y_one_neg_one(y == classes(2)) = 1;
     y_one_neg_one(y == classes(1)) = -1;
-    %Y = diag(y_one_neg_one); % Set diagonal matrix  Y
     
     X_ones = [ones(n, 1) X];
     
     % Set H matrix
-    %X1 = X_ones(y_one_neg_one == 1, :);
-    %z = mean(X1); % Row vector containing means of each column for class 1
     gamma = -.5/var(X_ones(:)); % Get variance of entire matrix
     
     H = zeros(n);
